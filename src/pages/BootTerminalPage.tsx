@@ -25,6 +25,7 @@ interface BootTerminalPageProps {
 export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
   const [visibleLines, setVisibleLines] = useState(0)
   const [readyToContinue, setReadyToContinue] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -32,6 +33,19 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
     }, 200)
 
     return () => window.clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const updateIsMobile = () => {
+      const mobileViewport = window.matchMedia('(max-width: 768px)').matches
+      const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+      setIsMobile(mobileViewport || coarsePointer)
+    }
+
+    updateIsMobile()
+    window.addEventListener('resize', updateIsMobile)
+
+    return () => window.removeEventListener('resize', updateIsMobile)
   }, [])
 
   useEffect(() => {
@@ -44,7 +58,8 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
     if (!readyToContinue) return
 
     const handler = (event: KeyboardEvent) => {
-      if (event.key === 'Enter') {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
         onComplete()
       }
     }
@@ -53,10 +68,19 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
     return () => window.removeEventListener('keydown', handler)
   }, [readyToContinue, onComplete])
 
+  const handleContinue = () => {
+    if (readyToContinue) {
+      onComplete()
+    }
+  }
+
   const visibleLog = useMemo(() => terminalLog.slice(0, visibleLines), [visibleLines])
 
   return (
-    <section className="boot-terminal relative min-h-[100svh] overflow-hidden px-4 py-6 md:px-6 md:py-8">
+    <section
+      className="boot-terminal relative min-h-[100svh] overflow-hidden px-4 py-6 md:px-6 md:py-8"
+      onClick={isMobile && readyToContinue ? handleContinue : undefined}
+    >
       <Container className="relative flex min-h-[calc(100svh-2rem)] items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -89,6 +113,14 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
                   </p>
                 ))}
               </div>
+
+              {readyToContinue && (
+                <div className="mt-4 border-t border-cyan-400/30 pt-4 text-sm text-cyan-200/80">
+                  <p className="font-mono">
+                    {isMobile ? 'Tap anywhere to continue...' : 'Press Enter or Space to continue...'}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </motion.div>
