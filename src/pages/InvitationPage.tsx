@@ -68,7 +68,7 @@ export function InvitationPage() {
               </div>
 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 md:items-stretch">
-                <div className="flex h-full min-h-[28rem] flex-col gap-4 justify-between">
+                <div className="flex flex-col gap-4 md:h-full md:min-h-[28rem] md:justify-between">
                   <div>
                     <div className="flex items-center gap-4">
                       <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#06304a] to-[#08243a] text-2xl text-[#7ecfff] sm:h-16 sm:w-16"><FaGraduationCap /></div>
@@ -100,7 +100,7 @@ export function InvitationPage() {
                   </div>
                 </div>
 
-                <div className="flex h-full min-h-[28rem] flex-col gap-4 justify-between">
+                <div className="flex flex-col gap-4 md:h-full md:min-h-[28rem] md:justify-between">
                   <div className="space-y-4">
                     <div className="rounded-xl border border-[#4fb0ff]/12 bg-[#031324]/70 p-4 sm:p-6">
                       <p className="text-sm font-medium text-[#9fcdfb]">Thời gian</p>
