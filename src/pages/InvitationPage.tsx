@@ -54,84 +54,87 @@ export function InvitationPage() {
         <div className="flex flex-1 items-center justify-center py-6 sm:py-10 md:py-16">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="w-full max-w-5xl">
             <div className="rounded-3xl border border-[#4fb0ff]/12 bg-[linear-gradient(180deg,rgba(6,12,24,0.92),rgba(3,8,18,0.86))] p-4 shadow-[0_12px_60px_rgba(12,20,36,0.6)] sm:p-6 md:p-12">
-              <div className="mb-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:justify-start">
+              <div className="mb-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-center">
+                <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                   <img src={uetImg} alt="UET" className="h-9 w-auto rounded-md object-contain sm:h-10 md:h-12" />
                   <img src={fetImg} alt="FET" className="h-8 w-auto rounded-md object-contain opacity-90 sm:h-9 md:h-10" />
                 </div>
-                <div className="min-w-0 flex-1 text-center md:text-left">
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#9fd6ff] sm:text-sm">GRADUATION CEREMONY</p>
+                <div className="min-w-0 flex-1 text-center md:text-center">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#9fd6ff] sm:text-sm">GRADUATION CEREMONY INVITATION</p>
                   <h2 className="mt-1 text-xl font-semibold text-[#dff6ff] sm:text-2xl md:text-3xl">{profile.eventTitle}</h2>
                   <p className="mt-1 text-sm text-[#bcdff5]">{`${profile.degreeTitle} • Khóa ${profile.academicYear}`}</p>
                 </div>
-                <div className="flex justify-center text-2xl text-[#9fd6ff] md:justify-end"><FaGraduationCap /></div>
+                <div className="flex justify-center text-2xl text-[#9fd6ff]"><FaGraduationCap /></div>
               </div>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#06304a] to-[#08243a] text-2xl text-[#7ecfff] sm:h-16 sm:w-16"><FaGraduationCap /></div>
-                    <div className="min-w-0">
-                      <div className="text-lg font-semibold text-[#e9fbff] sm:text-xl">{profile.studentName}</div>
-                      <div className="text-sm text-[#bcdff5]">{profile.schoolName}</div>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10 md:items-stretch">
+                <div className="flex h-full min-h-[28rem] flex-col gap-4 justify-between">
+                  <div>
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-[#06304a] to-[#08243a] text-2xl text-[#7ecfff] sm:h-16 sm:w-16"><FaGraduationCap /></div>
+                      <div className="min-w-0">
+                        <div className="text-lg font-semibold text-[#e9fbff] sm:text-xl">{profile.studentName}</div>
+                        <div className="text-sm text-[#bcdff5]">{profile.schoolName}</div>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="rounded-xl border border-[#4fb0ff]/12 bg-[#041125]/60 p-4 sm:p-6">
-                    <p className="text-[0.82rem] font-medium text-[#cfeeff]">Thông tin</p>
-                    <ul className="mt-3 space-y-2 text-sm text-[#d9eefc]">
-                      <li className="flex items-start gap-2"><FaGraduationCap className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Ngành:</span> {profile.majorName}</span></li>
-                      <li className="flex items-start gap-2"><FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Lớp:</span> {profile.className}</span></li>
-                      <li className="flex items-start gap-2"><FaPhone className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Liên hệ:</span> {profile.contactPhone}</span></li>
-                    </ul>
-                  </div>
+                    <div className="mt-4 rounded-xl border border-[#4fb0ff]/12 bg-[#041125]/60 p-4 sm:p-6">
+                      <p className="text-[0.82rem] font-medium text-[#cfeeff]">Thông tin</p>
+                      <ul className="mt-3 space-y-2 text-sm text-[#d9eefc]">
+                        <li className="flex items-start gap-2"><FaGraduationCap className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Ngành:</span> {profile.majorName}</span></li>
+                        <li className="flex items-start gap-2"><FaMapMarkerAlt className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Lớp:</span> {profile.className}</span></li>
+                        <li className="flex items-start gap-2"><FaPhone className="mt-0.5 shrink-0 text-[#7ecfff]" /><span className="min-w-0 break-words"><span className="font-medium text-[#e6fbff]">Liên hệ:</span> {profile.contactPhone}</span></li>
+                      </ul>
+                    </div>
 
-                  <div className="flex">
-                    <a
-                      href={profile.eventMapUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex w-full items-center justify-center rounded-xl border border-[#4fb0ff]/20 bg-[#072033] px-5 py-3 text-sm font-semibold text-[#9fd6ff] transition hover:bg-[#0a3152] sm:w-auto"
-                    >
-                      Mở chỉ đường
-                    </a>
+                    <div className="mt-4 flex">
+                      <a
+                        href={profile.eventMapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex w-full items-center justify-center rounded-xl border border-[#4fb0ff]/20 bg-[#072033] px-5 py-3 text-sm font-semibold text-[#9fd6ff] transition hover:bg-[#0a3152] sm:w-auto"
+                      >
+                        Mở địa chỉ
+                      </a>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                  <div className="rounded-xl border border-[#4fb0ff]/12 bg-[#031324]/70 p-4 sm:p-6">
-                    <p className="text-sm font-medium text-[#9fcdfb]">Thời gian</p>
-                    <div className="mt-3">
-                      <div className="schedule-row">
-                        <div className="schedule-icon"><FaClock /></div>
-                        <div className="min-w-0">
-                          <div className="schedule-sub">DATE (NGÀY)</div>
-                          <div className="schedule-meta break-words">{profile.eventDate} • {profile.eventTime}</div>
+                <div className="flex h-full min-h-[28rem] flex-col gap-4 justify-between">
+                  <div className="space-y-4">
+                    <div className="rounded-xl border border-[#4fb0ff]/12 bg-[#031324]/70 p-4 sm:p-6">
+                      <p className="text-sm font-medium text-[#9fcdfb]">Thời gian</p>
+                      <div className="mt-3">
+                        <div className="schedule-row">
+                          <div className="schedule-icon"><FaClock /></div>
+                          <div className="min-w-0">
+                            <div className="schedule-sub">DATE (NGÀY)</div>
+                            <div className="schedule-meta break-words">{profile.eventDate} • {profile.eventTime}</div>
+                          </div>
+                        </div>
+                        <div className="schedule-row">
+                          <div className="schedule-icon"><FaMapMarkerAlt /></div>
+                          <div className="min-w-0">
+                            <div className="schedule-sub">LOCATION (ĐỊA ĐIỂM)</div>
+                            <div className="schedule-meta break-words">{profile.eventVenue}</div>
+                          </div>
                         </div>
                       </div>
-                      <div className="schedule-row">
-                        <div className="schedule-icon"><FaMapMarkerAlt /></div>
-                        <div className="min-w-0">
-                          <div className="schedule-sub">LOCATION (ĐỊA ĐIỂM)</div>
-                          <div className="schedule-meta break-words">{profile.eventVenue}</div>
-                        </div>
+                    </div>
+
+                    <div className="countdown-panel">
+                      <div className="countdown-title">T-MINUS EVENT EXECUTION</div>
+                      <div className="countdown-grid">
+                        {countdown.map((item) => (
+                          <div key={item.label} className="countdown-cell">
+                            <div className="countdown-value">{item.value}</div>
+                            <div className="countdown-label">{item.label}</div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
 
-                  <div className="countdown-panel">
-                    <div className="countdown-title">T-MINUS EVENT EXECUTION</div>
-                    <div className="countdown-grid">
-                      {countdown.map((item) => (
-                        <div key={item.label} className="countdown-cell">
-                          <div className="countdown-value">{item.value}</div>
-                          <div className="countdown-label">{item.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="text-sm text-[#bcdff5] break-words">{profile.eventNote}</div>
                 </div>
               </div>
             </div>
@@ -139,6 +142,10 @@ export function InvitationPage() {
         </div>
 
         <div className="h-2 rounded-full bg-[#4fb0ff]/22 shadow-[0_0_18px_rgba(79,176,255,0.2)]" />
+
+        <div className="mx-auto mt-8 w-full max-w-5xl rounded-3xl border border-[#4fb0ff]/12 bg-[#041125]/60 p-4 text-sm text-[#bcdff5] shadow-[0_12px_45px_rgba(12,20,36,0.35)] sm:p-6">
+          {profile.eventNote}
+        </div>
       </Container>
     </section>
   )
