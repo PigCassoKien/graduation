@@ -15,12 +15,12 @@ export const profile: ProfileData = {
   eventMapUrl:
     'https://www.google.com/maps/place/H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+Nguy%E1%BB%85n+V%C4%83n+%C4%90%E1%BA%A1o/@21.0374295,105.7814895,774m/data=!3m2!1e3!4b1!4m6!3m5!1s0x313454caa88dfcb3:0x745de7b70f724ce!8m2!3d21.0374295!4d105.7814895!16s%2Fg%2F11b6rt0c6v?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D',
   contactPhone: '0338138386',
-  eventNote: 'Rất mong sự hiện diện của gia đình, thầy cô và bạn bè.',
+  eventNote: 'Sự hiện diện của gia đình, thầy cô và bạn bè trong ngày hôm nay là niềm vinh hạnh lớn và là món quà tinh thần quý giá nhất đối với mình. Cảm ơn vì đã luôn đồng hành cùng mình trong suốt chặng đường vừa qua!',
   invitationCode: 'CN2-GRAD-260705',
   seo: {
-    title: 'Graduation Website | Dương Minh Kiên',
+    title: 'Dương Minh Kiên - Graduation Ceremony Invitation',
     description:
       'Thiệp mời lễ tốt nghiệp phong cách IT, cyber và terminal dành cho Dương Minh Kiên.',
-    image: '/og-image.svg',
+    image: '/image/king pig.jpg',
   },
 }
