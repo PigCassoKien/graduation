@@ -113,14 +113,6 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
                   </p>
                 ))}
               </div>
-
-              {readyToContinue && (
-                <div className="mt-4 border-t border-cyan-400/30 pt-4 text-sm text-cyan-200/80">
-                  <p className="font-mono">
-                    {isMobile ? 'Tap anywhere to continue...' : 'Press Enter or Space to continue...'}
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         </motion.div>
