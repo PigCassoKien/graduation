@@ -109,7 +109,11 @@ export function BootTerminalPage({ onComplete }: BootTerminalPageProps) {
                     className={`boot-terminal__line boot-terminal__line--${line.type}`}
                   >
                     {line.type === 'command' ? '❯ ' : ''}
-                    {line.text}
+                    {line.type === 'hint'
+                      ? isMobile
+                        ? 'Tap anywhere to continue to the invitation page...'
+                        : 'Press ENTER to continue to the invitation page...'
+                      : line.text}
                   </p>
                 ))}
               </div>
