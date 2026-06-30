@@ -309,7 +309,43 @@ button, input, textarea, select { font: inherit; }
 }
 
 @media (max-width: 768px) {
-  .boot-terminal__screen { padding: 1rem; }
-  .boot-terminal__title { font-size: 0.8rem; }
-  .boot-terminal__meta { font-size: 0.78rem; }
+  .boot-terminal {
+    padding-inline: 0.6rem;
+    padding-block: 0.75rem;
+  }
+
+  .boot-terminal__window {
+    max-height: calc(100svh - 1.5rem);
+    border-radius: 16px;
+  }
+
+  .boot-terminal__header {
+    padding: 0.75rem 0.9rem;
+    gap: 0.7rem;
+  }
+
+  .boot-terminal__screen { padding: 0.85rem 0.9rem 1rem; }
+  .boot-terminal__title {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+  }
+  .boot-terminal__meta {
+    font-size: 0.68rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.35;
+  }
+  .boot-terminal__divider { margin-bottom: 0.7rem; }
+  .boot-terminal__content {
+    min-height: auto;
+    max-height: calc(100svh - 13.5rem);
+    overflow-y: auto;
+    padding-right: 0.2rem;
+  }
+  .boot-terminal__line {
+    margin: 0.35rem 0;
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+  .boot-terminal__line--prompt { font-size: 0.78rem; }
 }
